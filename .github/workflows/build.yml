@@ -1,1 +1,68 @@
-I have updated my Android Expense Tracker project. The zip file MyExpenseTracker.zip contains the complete Jetpack Compose, Kotlin, Room Database v2, WorkManager offline reminders, dynamic multi-currency support, advanced EMI amortization calculator, prepayment savings simulator, and safe data management. Please extract MyExpenseTracker.zip, flatten the Gradle project structure to root if needed, and run ./gradlew assembleDebug to build the Android debug APK.
+# Comprehensive Prompt: Pro Android & Web Personal Expense & EMI Tracker App
+
+Build a production-grade, 100% offline-first Personal Finance, Fixed Expenses, and EMI Tracker application with modern UI (Material 3 / Jetpack Compose / React Tailwind CSS), Room Database / SQLite persistence, and advanced financial intelligence engines.
+
+---
+
+## 1. Core Architecture & Tech Requirements
+- **Architecture**: MVVM / Modular state management with offline-first persistence.
+- **Data Persistence**: Room Database (SQLite) with Schema v2, DataStore / localStorage for user preferences, Storage Access Framework (SAF) JSON Export & Restore.
+- **Background Engine**: WorkManager / Local timer workers for offline bill and loan due date reminders.
+- **Dynamic Currency Support**: Global real-time currency selector (INR ₹, USD $, EUR €, GBP £, JPY ¥, AED د.إ). ZERO hardcoded currency symbols in input fields, labels, modals, or reports.
+
+---
+
+## 2. Key Modules & Features
+
+### A. Dynamic Currency Engine & Preferences
+- Support multi-currency selector in Settings.
+- Dynamically format all amounts using `Intl.NumberFormat` or locale currency formatters.
+- Dynamically render current currency symbol (e.g. `$`, `₹`, `€`) inside amount text fields, headers, and modals based on user selection.
+
+### B. Fixed Bills & Recurring Expenses Suite
+- **Categories**: Room Rent, Electricity Charges, Water Charges, WiFi & Broadband, Maid & House Help, Society Maintenance, Subscriptions & OTT, Insurance & Health, Gas & Cylinder, Other Fixed Bill.
+- **Due Date Urgency Engine**:
+  - 🟢 Paid (Green badge with last paid date)
+  - 🟡 Due in N Days / Due Today / Due Tomorrow (Amber badge with countdown)
+  - 🔴 Overdue (Red pulsing badge with overdue days count)
+- **Actions**:
+  - Prominent "+ Add New Fixed Bill" card and Floating Action Button (FAB).
+  - Category filter pills.
+  - "Mark as Paid": Opens a modal offering to log as an Expense Transaction (UPI, Bank, Cash) and automatically advances due date to the next cycle.
+
+### C. Advanced EMI & Loan Tracker (Amortization & Prepayment Simulator)
+- **Loan Parameters**: Loan Name, Lender/Bank Name, Monthly EMI, Total Loan Amount, Annual Interest Rate %, Total Installments, Paid Installments, Next Due Date.
+- **Financial Overview**: Total Monthly EMI Outflow, Total Outstanding Principal Debt, Active vs Closed Loans count.
+- **Interactive Amortization Schedule Table**:
+  - Modal/Drawer displaying month-by-month breakdown: Month #, Opening Balance, EMI, Principal Portion, Interest Portion, Closing Balance, and Paid status.
+- **Prepayment & Foreclosure Simulator**:
+  - Input Extra Monthly Payment or Lump-Sum Prepayment amount.
+  - Calculates: Months Saved (Tenure reduction), Estimated Interest Saved in currency, and new payoff date.
+- **One-Click Installment Payment**: Increments paid count, auto-logs transaction, advances due date, and marks loan as "🎉 CLOSED" when 100% paid.
+
+### D. Dashboard & Financial Health Engine
+- **Balance Card**: Total Available Balance, Total Savings, Starting Balance editor.
+- **Monthly Spending Budget**: Set monthly spending budget, percentage progress bar, pace comparison indicator, and option to sync budget with current starting balance.
+- **AI Financial Health Score (0-1000)**: Evaluates Savings Rate, Debt-to-Income Ratio (DTI), Budget Discipline, and Emergency Runway in months.
+- **Quick Dock**: Voice expense logger, Bill receipt scanner simulation, Pro financial statement exporter.
+
+### E. Transactions Feed & History
+- Log Income (+) and Expense (-) records.
+- Fields: Amount, Category, Payment Method (UPI, Bank, Cash, Credit Card), ISO Date, Time (HH:mm), and Note/Description.
+- Search by keyword, filter by Type (Income/Expense), Category, or Date range.
+
+### F. Analytics & Reports
+- Monthly breakdown: Total Income, Total Expenses, Total Net Savings.
+- Highest Expense Category badge with percentage of total spending.
+- Interactive Category Pie Chart and Bar Chart.
+
+### G. Safe Data Management & Danger Zone
+- **JSON Backup & Restore**: Download full offline backup JSON and restore validated backup files.
+- **Safe Danger Zone**: To prevent accidental data wipes, "Clear All Data" must open a secure modal requiring the user to manually type "DELETE" before enabling the clear button.
+
+---
+
+## 3. UI/UX Guidelines
+- Clean, futuristic, responsive design with Light/Dark mode support.
+- Smooth transitions, floating action buttons (+ Add), rounded cards (`rounded-3xl`), and clear typographic hierarchy.
+- No dummy/mock unhandled buttons — every button must perform its action cleanly.
