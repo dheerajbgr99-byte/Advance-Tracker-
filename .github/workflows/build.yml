@@ -1,11 +1,1 @@
-Build a production-ready Native Android Expense & Budget Tracker application in Kotlin with Jetpack Compose, Material 3, Room SQLite, WorkManager, and StateFlow. 
-
-Key Requirements:
-- Target SDK 35, Min SDK 24, Kotlin 2.1.0, Compose BOM 2024.12.01
-- Offline-first architecture with Room DB (Transactions, Budgets, Fixed Expenses, EMIs)
-- Dashboard with Monthly Income/Expense cards, Category breakdown, and Recent transactions
-- Full Transaction management (Add/Edit, Income/Expense, Categories, Payment methods: UPI/Cash/Card/NetBanking)
-- Fixed Expenses & EMI tracking with Monthly commitment total
-- Monthly Category Budgets with progress bars and 80%/100% warning alerts
-- Settings for Currency selection (₹, $, €, £), Biometric PIN toggle, Backup/Restore JSON, and Daily reminder notifications via WorkManager
-- Complete Material 3 Theme with Color.kt, Type.kt, Theme.kt, and strict zero-error compilation with Gradle 8.9 and AGP 8.7.3.
+I have updated my Android Expense Tracker project. The zip file MyExpenseTracker.zip contains the complete Jetpack Compose, Kotlin, Room Database v2, WorkManager offline reminders, dynamic multi-currency support, advanced EMI amortization calculator, prepayment savings simulator, and safe data management. Please extract MyExpenseTracker.zip, flatten the Gradle project structure to root if needed, and run ./gradlew assembleDebug to build the Android debug APK.
